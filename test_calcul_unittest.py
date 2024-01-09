@@ -37,9 +37,8 @@ class TestCalcul(unittest.TestCase):
 
     # Test de division par zéro
     def test_diviser_par_zero(self):
-        resultat = self.calc.diviser(5, 0)
-        # Vérifier si le résultat est une chaîne indiquant l'impossibilité de diviser par zéro
-        self.assertEqual(resultat, "Division par zéro impossible")
+        with self.assertRaises(ZeroDivisionError, msg="Division par zéro impossible"):
+                    self.calc.diviser(5, 0)
 
 # Exécuter les tests si le script est exécuté directement
 if __name__ == '__main__':

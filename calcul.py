@@ -9,7 +9,9 @@ class Calcul:
         return a * b
 
     def diviser(self, a, b):
-        if b != 0:
-            return a / b
-        else:
+        try:
+            result = a / b
+            return result
+        except ZeroDivisionError:
             return "Division par zéro impossible"
+
